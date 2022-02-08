@@ -1,0 +1,30 @@
+{
+  "name": "upload-node",
+  "version": "1.0.0",
+  "description": "Upload file in excel and export to json.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeltonluz/upload-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/joeltonluz/upload-node/issues"
+  },
+  "homepage": "https://github.com/joeltonluz/upload-node#readme",
+  "dependencies": {
+    "fastify": "^3.27.1",
+    "fastify-file-upload": "^3.0.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.15"
+  }
+}
