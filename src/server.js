@@ -1,23 +1,36 @@
-import fastify from "fastify";
-import fileUpload from "fastify-file-upload";
+import express from 'express';
+import multer from 'fastify-multer';
+import fs from 'fs';
 
-import indexController from "./index.js";
+const app = express();
+//global.__basedir = __dirname
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-
-const server = fastify({
-  logger: false
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, '/uploads/')
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + "-" + Date.now() + "-" + file.originalname)
+  }
 })
 
-server.register(fileUpload)
+const upload = multer({ 
+  storage: storage
+})
 
-server.register(indexController, { prefix: "/" });
-server.register(indexController, { prefix: "/upload" });
+app.get('/', (req, res) => {
+  res.send('opa')
+});
 
-server.listen(3000, '0.0.0.0', async (err, address) => {
-  if (err) {
-      console.error(err)
-      process.exit(1)
-  }
-  console.log(`Server listening at ${address}`)
+app.post('/', upload.single('uploadFile'), (req, res) => {
+  res.code(200).json({
+    'msg': 'File uploaded/import successfully!',
+    'file': ''
+  })
+
+})
+
+app.listen(3000, () => {
+
+  console.log(`Server listening at ${3000}`)
 })
