@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Planilha de Pagametos</title>
+</head>
+  <body>
+    <div style="text-align: center;">
+      <h1 class='font-size:1.4px;margin-bottom:10px;'>
+        Upload Planilha de Pagamentos -NodeJS <br />
+        {banco_selecionado}
+      </h1>
+      <br /><br />
+      <form id="formPlanilha" action='' method='post' enctype='multipart/form-data'>
+        <input type='file' name='file' accept='.xls, .xlsx' required>
+        <br /><br />
+        <br /><br />
+        <input type='submit' style="background-color:#060; color: #fff; padding: 5px 15px; cursor: pointer" 
+            value='Gerar Arquivo de Pagamentos - CNAB 240' >
+      </form>
+    </div>
+  </body>
+</html>

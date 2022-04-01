@@ -20,13 +20,13 @@
   },
   "homepage": "https://github.com/joeltonluz/upload-node#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.3",
-    "exceljs": "^4.3.0",
-    "fs": "0.0.1-security",
-    "multer": "^1.4.4"
+    "express-ejs-layouts": "^2.5.1",
+    "formidable": "^2.0.1",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
     "nodemon": "^2.0.15"
   }
 }
